@@ -16,7 +16,20 @@ int main(){
 		cout << input;
 		if (key != "")
 		{
-			cout << "Kunci : " << key << endl;
+			cout << "\n\n";
+			for (int i = 0; i < banyak; i++)
+			{
+				for (int j = 0; j < nama[i].length(); j++)
+				{
+					for (int k = 0; k < key.length(); k++)
+						if (j + k < nama[i].length())
+							cout << j + k << " ";
+						
+					cout << endl;
+				}
+
+				cout << endl;
+			}
 		}
 
 		c = getch();

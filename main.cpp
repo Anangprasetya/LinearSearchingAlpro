@@ -4,13 +4,15 @@
 int main(){
 
 	int banyak = 5;
-	string nama[banyak] = {"andi", "anang" ,"cibulangka", "bantama", "andika" };
+	string nama[banyak] = {"andi", "anangc" ,"cibulangka", "bantama", "andika" };
 
 
 	char c;
 	int p_input;
 	string key = "";
 	string input = "Input Pencarian : ";
+	string ambildata = "";
+	bool muncul = true;
 
 	while(true){
 		cout << input;
@@ -19,16 +21,25 @@ int main(){
 			cout << "\n\n";
 			for (int i = 0; i < banyak; i++)
 			{
+				muncul = true;
 				for (int j = 0; j < nama[i].length(); j++)
 				{
 					for (int k = 0; k < key.length(); k++)
 						if (j + k < nama[i].length())
-							cout << j + k << " ";
-						
-					cout << endl;
+							ambildata += nama[i][j + k];
+
+					if (ambildata == key)
+						if (muncul)
+						{
+							cout << "Nama  : " << nama[i] << endl;
+							muncul = false;
+						}
+
+
+					ambildata = "";
+
 				}
 
-				cout << endl;
 			}
 		}
 

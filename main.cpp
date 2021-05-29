@@ -14,8 +14,10 @@ int main(){
 
 	while(true){
 		cout << input;
-		if (key == "anang")
-			cout << "\nok";
+		if (key != "")
+		{
+			cout << "Kunci : " << key << endl;
+		}
 
 		c = getch();
 		if (c == '\n')

@@ -2,6 +2,11 @@
 #include "myConio.h"
 
 int main(){
+
+	int banyak = 5;
+	string nama[banyak] = {"andi", "anang" ,"cibulangka", "bantama", "andika" };
+
+
 	char c;
 	int p_input;
 	string key = "";

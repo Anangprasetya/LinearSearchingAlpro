@@ -4,8 +4,8 @@
 
 int main(){
 
-	int banyak = 5;
-	string nama[banyak] = {"andi", "anangc" ,"cibulangka", "bantama", "andika" };
+	int banyak = 6;
+	string nama[banyak] = {"andi", "anang" ,"cibulangka", "bantama", "andika", "diki"};
 
 
 	char c;
@@ -14,12 +14,14 @@ int main(){
 	string input = "Input Pencarian : ";
 	string ambildata = "";
 	bool muncul = true;
+	bool ketemu = false;
 
 	while(true){
 		cout << input;
 		if (key != "")
 		{
 			cout << "\n\n";
+			ketemu = false;
 			for (int i = 0; i < banyak; i++)
 			{
 				muncul = true;
@@ -34,14 +36,13 @@ int main(){
 						{
 							cout << "Nama  : " << nama[i] << endl;
 							muncul = false;
+							ketemu = true;
 						}
-
-
 					ambildata = "";
-
 				}
-
 			}
+			if (!ketemu)
+				cout << "Pencarian '" << key << "' Tidak Ditemukan !!! \n";
 		}
 
 		c = getch();
@@ -61,8 +62,6 @@ int main(){
 
 		clrscr();
 	}
-
-
 
 	return 0;
 }

@@ -3,7 +3,7 @@ using namespace std;
 static struct termios old, baru;
  
 /* Initialize baru terminal i/o settings */
-void initTermios(int echo) 
+inline void initTermios(int echo) 
 {
   tcgetattr(0, &old); //grab old terminal i/o settings
   baru = old; //make baru settings same as old settings
@@ -13,13 +13,13 @@ void initTermios(int echo)
 }
  
 /* Restore old terminal i/o settings */
-void resetTermios(void) 
+inline void resetTermios(void) 
 {
   tcsetattr(0, TCSANOW, &old);
 }
  
 /* Read 1 character - echo defines echo mode */
-char getch_(int echo) 
+inline char getch_(int echo) 
 {
   char ch;
   initTermios(echo);
@@ -32,7 +32,7 @@ char getch_(int echo)
 Read 1 character without echo 
 getch() function definition.
 */
-char getch(void) 
+inline char getch(void) 
 {
   return getch_(0);
 }
@@ -41,12 +41,20 @@ char getch(void)
 Read 1 character with echo 
 getche() function definition.
 */
-char getche(void) 
+inline char getche(void) 
 {
   return getch_(1);
 }
 
-void clrscr(void)
+inline void clrscr(void)
 {
     system("clear");
+}
+
+inline string strlow(string x){
+  for (int i = 0; i < x.length(); i++)
+    if (x[i] >= 'A' && x[i] <= 'Z')
+       x[i] = x[i] + 32;
+
+  return x;
 }

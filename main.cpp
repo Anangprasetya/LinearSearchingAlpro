@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string.h>
 #include "myConio.h"
 
 int main(){
@@ -28,7 +29,7 @@ int main(){
 						if (j + k < nama[i].length())
 							ambildata += nama[i][j + k];
 
-					if (ambildata == key)
+					if (strlow(ambildata) == strlow(key))
 						if (muncul)
 						{
 							cout << "Nama  : " << nama[i] << endl;
@@ -60,6 +61,8 @@ int main(){
 
 		clrscr();
 	}
+
+
 
 	return 0;
 }

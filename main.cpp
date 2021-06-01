@@ -7,20 +7,22 @@ int main(){
 	int banyak = 6;
 	string nama[banyak] = {"andi", "anang" ,"cibulangka", "bantama", "andika", "diki"};
 
-
 	char c;
 	int p_input;
 	string key = "";
 	string input = "Input Pencarian : ";
+	int p_awal = input.length();
 	string ambildata = "";
 	bool muncul = true;
 	bool ketemu = false;
 
+
 	while(true){
+		clrscr();
 		cout << input;
+		cout << "\n\n";
 		if (key != "")
 		{
-			cout << "\n\n";
 			ketemu = false;
 			for (int i = 0; i < banyak; i++)
 			{
@@ -43,6 +45,11 @@ int main(){
 			}
 			if (!ketemu)
 				cout << "Pencarian '" << key << "' Tidak Ditemukan !!! \n";
+		}
+		else{
+			for (int i = 0; i < banyak; i++)
+				cout << "Nama   : " << nama[i] << endl;
+
 		}
 
 		c = getch();

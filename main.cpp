@@ -46,12 +46,13 @@ int main(){
 			if (!ketemu)
 				cout << "Pencarian '" << key << "' Tidak Ditemukan !!! \n";
 		}
-		else{
+		else
 			for (int i = 0; i < banyak; i++)
 				cout << "Nama   : " << nama[i] << endl;
 
-		}
 
+		
+		cout << "\n\n\n\n\n\n\n\n";	
 		c = getch();
 		if (c == '\n')
 			break;
